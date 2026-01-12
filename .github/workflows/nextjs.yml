@@ -73,7 +73,18 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        run: npm run build
+      - name: List files (Debug)
+        run: |
+          echo "Current directory:"
+          ls -F
+          if [ -d "out" ]; then
+            echo "out directory exists. Listing content:"
+            ls -R out
+          else
+            echo "ERROR: out directory not found!"
+            exit 1
+          fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
