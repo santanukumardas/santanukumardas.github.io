@@ -1,14 +1,15 @@
 export const siteConfig = {
     name: "SANTANU KUMAR DAS",
     initials: "SKD.",
-    bio: "Cloud professional by day, photographer and experimenter by night.",
+    bio: "",
     sections: {
         tech: false,
         journal: false,
         photography: false,
         projects: false,
-        about: true,
+        about: false,
     },
+    isCooking: true,
     socials: {
         instagram: "https://www.instagram.com/_santanukdas_/",
         github: "https://github.com/santanukumardas",

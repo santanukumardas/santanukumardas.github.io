@@ -15,6 +15,13 @@ export default function Home() {
           {siteConfig.name.split(' ').slice(0, 2).join(' ')} <br />
           {siteConfig.name.split(' ').slice(2).join(' ')}
         </h1>
+        {siteConfig.isCooking && (
+          <div className="mb-6">
+            <span className="text-xs font-bold tracking-[0.3em] uppercase opacity-40 animate-pulse">
+              WAIT, NOT SO FAST, IT'S STILL COOKING
+            </span>
+          </div>
+        )}
         <p className="text-xl md:text-3xl max-w-2xl font-light leading-relaxed opacity-80">
           {siteConfig.bio}
         </p>
@@ -152,7 +159,6 @@ export default function Home() {
 
       <footer className="py-12 px-6 md:px-12 max-w-7xl mx-auto w-full border-t border-foreground/10 text-[10px] font-mono opacity-40 flex justify-between items-center">
         <span>© {new Date().getFullYear()} {siteConfig.name}</span>
-        <span>CLOUD PROFESSIONAL & PHOTOGRAPHER</span>
       </footer>
     </main>
   );
